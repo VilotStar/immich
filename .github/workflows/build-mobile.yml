@@ -2,18 +2,6 @@ name: Build Mobile
 
 on:
   workflow_dispatch:
-  workflow_call:
-    inputs:
-      ref:
-        required: false
-        type: string
-  pull_request:
-  push:
-    branches: [main]
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
 
 jobs:
   build-ios:
